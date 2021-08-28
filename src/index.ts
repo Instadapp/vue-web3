@@ -85,7 +85,10 @@ export const useWeb3 = () => {
       update.chainId === undefined
         ? undefined
         : normalizeChainId(update.chainId)
-    account.value = update.account
+    account.value =
+      typeof update.account === 'string'
+        ? normalizeAccount(update.account)
+        : update.account
   }
 
   const handleError = (e: Error): void => {
