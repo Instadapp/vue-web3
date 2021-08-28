@@ -1,0 +1,63 @@
+{
+  "name": "@kabbouchi/vue-web3",
+  "version": "0.1.0",
+  "description": "Vue web3 composition api",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "dev": "jiti scripts/watch.ts --cache",
+    "build": "unbuild",
+    "lint": "prettier -c --parser typescript \"{src,tests}/**/*.[jt]s?(x)\"",
+    "lint:fix": "yarn run lint --write",
+    "test:types": "tsc --build tsconfig.json",
+    "test:unit": "jest",
+    "test": "yarn run test:types && yarn run test:unit"
+  },
+  "files": [
+    "dist/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "@ethersproject/bytes": "^5.4.0",
+    "@ethersproject/keccak256": "^5.4.0",
+    "@web3-react/abstract-connector": "^6.0.7",
+    "@web3-react/types": "^6.0.7",
+    "tiny-invariant": "^1.1.0",
+    "vue-demi": "^0.11.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "chokidar": "^3.5.2",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "pascalcase": "^1.0.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.3.5",
+    "unbuild": "^0.4.2",
+    "vue": "^3.2.6"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  }
+}

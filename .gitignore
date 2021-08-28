@@ -1,0 +1,7 @@
+# Library
+node_modules
+yarn-error.log
+dist
+.vscode
+# OS
+.DS_Store
