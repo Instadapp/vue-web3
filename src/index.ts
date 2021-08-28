@@ -85,6 +85,11 @@ export const useWeb3 = () => {
       return
     }
 
+    if (!connector.value) {
+      handleDeactivate()
+      return
+    }
+
     const cId =
       update.chainId === undefined
         ? undefined
