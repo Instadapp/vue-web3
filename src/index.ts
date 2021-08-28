@@ -1,9 +1,9 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { normalizeAccount, normalizeChainId } from './normalizers'
-import { ConnectorUpdate } from '@web3-react/types'
-import { computed, ref, watch } from 'vue-demi'
+import { ConnectorEvent, ConnectorUpdate } from '@web3-react/types'
+import { computed, onBeforeUnmount, ref, watch } from 'vue-demi'
 
-class UnsupportedChainIdError extends Error {
+export class UnsupportedChainIdError extends Error {
   public constructor(
     unsupportedChainId: number,
     supportedChainIds?: readonly number[],
@@ -28,7 +28,7 @@ const active = computed(
 )
 const library = ref()
 
-let getLibrary = (provider?: any, connector?: any) => () => null
+let getLibrary: any = (provider?: any, connector?: any) => (): any => null
 
 export const setWeb3LibraryCallback = (
   cb: (provider?: any, connector?: any) => any,
@@ -37,6 +37,8 @@ export const setWeb3LibraryCallback = (
 }
 
 export const useWeb3 = () => {
+  const onErrorCb = ref<(error: Error) => void>()
+
   const activate = async (
     c: AbstractConnector,
     onError?: (error: Error) => void,
@@ -56,7 +58,9 @@ export const useWeb3 = () => {
       chainId.value = augmentedUpdate.chainId
       provider.value = augmentedUpdate.provider
       account.value = augmentedUpdate.account
-    } catch (e) {
+      error.value = undefined
+      onErrorCb.value = onError
+    } catch (e: any) {
       error.value = e
 
       if (throwErrors) {
@@ -71,6 +75,38 @@ export const useWeb3 = () => {
 
   const deactivate = () => {
     connector.value?.deactivate()
+
+    handleDeactivate()
+  }
+
+  const handleUpdate = async (update: ConnectorUpdate): Promise<void> => {
+    provider.value = update.provider
+    chainId.value =
+      update.chainId === undefined
+        ? undefined
+        : normalizeChainId(update.chainId)
+    account.value = update.account
+  }
+
+  const handleError = (e: Error): void => {
+    error.value = e
+
+    if (onErrorCb.value) {
+      onErrorCb.value(e)
+    }
+
+    active && connector.value?.deactivate()
+
+    handleDeactivate()
+  }
+
+  const handleDeactivate = (): void => {
+    connector.value = undefined
+
+    chainId.value = undefined
+    provider.value = undefined
+    account.value = undefined
+    library.value = undefined
   }
 
   watch([active, provider, connector, chainId], () => {
@@ -81,6 +117,28 @@ export const useWeb3 = () => {
       !!connector.value
         ? getLibrary(provider.value, connector.value)
         : undefined
+  })
+
+  watch(
+    connector,
+    () => {
+      if (connector.value) {
+        connector.value
+          .on(ConnectorEvent.Update, handleUpdate)
+          .on(ConnectorEvent.Error, handleError)
+          .on(ConnectorEvent.Deactivate, handleDeactivate)
+      }
+    },
+    { immediate: true },
+  )
+
+  onBeforeUnmount(() => {
+    if (connector.value) {
+      connector.value
+        .off(ConnectorEvent.Update, handleUpdate)
+        .off(ConnectorEvent.Error, handleError)
+        .off(ConnectorEvent.Deactivate, handleDeactivate)
+    }
   })
 
   return {

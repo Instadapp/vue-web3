@@ -1,19 +1,21 @@
 {
-  "include": ["scripts/watch.ts", "src/**/*", "tests/**/*"],
-  "exclude": ["dist", "node_modules"],
+  "include": ["src/global.d.ts", "src/**/*.ts", "__tests__/**/*.ts"],
+  "exclude": ["dist", "node_modules", "demo"],
   "compilerOptions": {
+    "baseUrl": ".",
     "rootDir": ".",
     "outDir": "dist",
     "sourceMap": false,
     "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
 
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "skipLibCheck": true,
 
     "noUnusedLocals": true,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
@@ -24,8 +26,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "removeComments": false,
-
-    "lib": ["esnext"],
-    "types": ["node", "jest"]
+    "jsx": "preserve",
+    "lib": ["es5", "dom"],
+    "types": ["node", "jest", "howler"]
   }
 }
