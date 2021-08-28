@@ -81,7 +81,7 @@ export const useWeb3 = () => {
 
   const handleUpdate = async (update: ConnectorUpdate): Promise<void> => {
     if (error.value) {
-      deactivate()
+      error.value = undefined
       return
     }
 
