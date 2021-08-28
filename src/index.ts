@@ -80,15 +80,27 @@ export const useWeb3 = () => {
   }
 
   const handleUpdate = async (update: ConnectorUpdate): Promise<void> => {
-    provider.value = update.provider
-    chainId.value =
+    if (update.provider) {
+      provider.value = update.provider
+    }
+
+    const cId =
       update.chainId === undefined
         ? undefined
         : normalizeChainId(update.chainId)
-    account.value =
+
+    if (cId) {
+      chainId.value = cId
+    }
+
+    const acc =
       typeof update.account === 'string'
         ? normalizeAccount(update.account)
         : update.account
+
+    if (acc) {
+      account.value = acc
+    }
   }
 
   const handleError = (e: Error): void => {
