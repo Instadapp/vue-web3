@@ -85,17 +85,30 @@ export const useWeb3 = () => {
       return
     }
 
-    if (update.provider) {
-      provider.value = update.provider
-    }
-
     const cId =
       update.chainId === undefined
         ? undefined
         : normalizeChainId(update.chainId)
 
+    if (
+      cId !== undefined &&
+      !!connector.value.supportedChainIds &&
+      !connector.value.supportedChainIds.includes(cId)
+    ) {
+      const e = new UnsupportedChainIdError(
+        cId,
+        connector.value.supportedChainIds,
+      )
+      onErrorCb.value ? onErrorCb.value(e) : handleError(e)
+      return
+    }
+
     if (cId) {
       chainId.value = cId
+    }
+
+    if (update.provider) {
+      provider.value = update.provider
     }
 
     const acc =
