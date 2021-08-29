@@ -55,3 +55,16 @@ defineComponent({
   },
 })
 ```
+Typescript:
+
+```js
+import Web3 from 'web3'
+
+const { library } = useWeb3<Web3>()
+```
+
+```js
+import { Web3Provider } from "@ethersproject/providers";
+
+const { library } = useWeb3<Web3Provider>()
+```

@@ -1,6 +1,6 @@
 {
   "name": "@kabbouchi/vue-web3",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "Vue web3 composition api",
   "license": "MIT",
   "main": "dist/cjs/index.js",

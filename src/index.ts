@@ -36,7 +36,7 @@ export const setWeb3LibraryCallback = (
   getLibrary = cb
 }
 
-export const useWeb3 = <TLibrary>() => {
+export const useWeb3 = <TLibrary = any>() => {
   const onErrorCb = ref<(error: Error) => void>()
 
   const activate = async (
