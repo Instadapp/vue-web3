@@ -1,7 +1,7 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { normalizeAccount, normalizeChainId } from './normalizers'
 import { ConnectorEvent, ConnectorUpdate } from '@web3-react/types'
-import { computed, onBeforeUnmount, ref, watch } from 'vue-demi'
+import { computed, onBeforeUnmount, Ref, ref, watch } from 'vue-demi'
 
 export class UnsupportedChainIdError extends Error {
   public constructor(
@@ -36,7 +36,7 @@ export const setWeb3LibraryCallback = (
   getLibrary = cb
 }
 
-export const useWeb3 = () => {
+export const useWeb3 = <TLibrary>() => {
   const onErrorCb = ref<(error: Error) => void>()
 
   const activate = async (
@@ -180,7 +180,7 @@ export const useWeb3 = () => {
   })
 
   return {
-    library,
+    library: library as Ref<TLibrary>,
     active,
     activate,
     deactivate,
