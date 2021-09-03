@@ -1,4 +1,4 @@
-# @kabbouchi/vue-web3 - experimental
+# @instadapp/vue-web3
 
 Vue 2/3 wrapper for web3 built on top of [react-web3](https://github.com/NoahZinsmeister/web3-react).
 
@@ -8,16 +8,16 @@ Install:
 
 ```bash
 # npm
-npm i @kabbouchi/vue-web3
+npm i @instadapp/vue-web3
 
 # yarn
-yarn add @kabbouchi/vue-web3
+yarn add @instadapp/vue-web3
 ```
 
 Usage:
 
 ```js
-import { useWeb3, setWeb3LibraryCallback } from '@kabbouchi/vue-web3'
+import { useWeb3, setWeb3LibraryCallback } from '@instadapp/vue-web3'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 
