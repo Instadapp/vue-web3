@@ -26,7 +26,7 @@
     "@web3-react/abstract-connector": "^6.0.7",
     "@web3-react/types": "^6.0.7",
     "tiny-invariant": "^1.1.0",
-    "vue-demi": "^0.11.3"
+    "vue-demi": "^0.11.4"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",
@@ -43,8 +43,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.1.5",
-    "yorkie": "^2.0.0",
-    "vue": "^3.2.6"
+    "vue": "^3.2.6",
+    "yorkie": "^2.0.0"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
