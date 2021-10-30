@@ -1,12 +1,33 @@
 {
   "name": "@instadapp/vue-web3",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Vue web3 composition api",
   "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "unpkg": "dist/global/index.js",
-  "types": "dist/esm/src/index.d.ts",
+  "main": "index.js",
+  "module": "dist/vue-web3.mjs",
+  "unpkg": "dist/vue-web3.iife.js",
+  "jsdelivr": "dist/vue-web3.iife.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": "./dist/vue-web3.esm-browser.js",
+      "node": {
+        "import": {
+          "production": "./dist/vue-web3.prod.cjs",
+          "development": "./dist/vue-web3.mjs",
+          "default": "./dist/vue-web3.mjs"
+        },
+        "require": {
+          "production": "./dist/vue-web3.prod.cjs",
+          "development": "./dist/vue-web3.cjs",
+          "default": "./index.js"
+        }
+      },
+      "import": "./dist/vue-web3.mjs"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*"
+  },
   "sideEffects": false,
   "scripts": {
     "prepublishOnly": "npm i && npm run build",
@@ -17,6 +38,8 @@
   },
   "files": [
     "dist/**/*",
+    "index.js",
+    "index.cjs",
     "LICENSE",
     "README.md"
   ],
