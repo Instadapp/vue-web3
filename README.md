@@ -1,6 +1,6 @@
 # @instadapp/vue-web3
 
-Vue 2/3 wrapper for web3 built on top of [react-web3](https://github.com/NoahZinsmeister/web3-react/tree/v6).
+Vue 2/3 wrapper for web3 built on top of [react-web3@v6](https://github.com/NoahZinsmeister/web3-react/tree/v6).
 
 ## 🚀 Quick Start
 
