@@ -9,7 +9,7 @@ export class UnsupportedChainIdError extends Error {
     supportedChainIds?: readonly number[],
   ) {
     super()
-    this.name = this.constructor.name
+    this.name = 'UnsupportedChainIdError'
     this.message = `Unsupported chain id: ${unsupportedChainId}. Supported chain ids are: ${supportedChainIds}.`
   }
 }
