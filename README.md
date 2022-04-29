@@ -69,4 +69,10 @@ import { Web3Provider } from "@ethersproject/providers";
 const { library } = useWeb3<Web3Provider>()
 ```
 
-Demo: https://github.com/KABBOUCHI/nuxt-vue-web3
+<br />
+---
+<br />
+
+Demo (Nuxt 2): https://github.com/KABBOUCHI/nuxt-vue-web3
+
+Demo (Nuxt 3): https://github.com/KABBOUCHI/nuxt3-vue-web3
