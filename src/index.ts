@@ -11,6 +11,8 @@ export class UnsupportedChainIdError extends Error {
     super()
     this.name = 'UnsupportedChainIdError'
     this.message = `Unsupported chain id: ${unsupportedChainId}. Supported chain ids are: ${supportedChainIds}.`
+
+    Object.setPrototypeOf(this, UnsupportedChainIdError.prototype)
   }
 }
 
