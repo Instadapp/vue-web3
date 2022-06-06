@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
+    "@nuxt/ui": "^0.1.1",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.3"
