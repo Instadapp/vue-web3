@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Vue web3 composition api",
   "license": "MIT",
   "main": "index.js",
@@ -26,7 +26,8 @@
       "import": "./dist/vue-web3.mjs"
     },
     "./package.json": "./package.json",
-    "./dist/*": "./dist/*"
+    "./dist/*": "./dist/*",
+    "./nuxt/*": "./nuxt/*"
   },
   "sideEffects": false,
   "scripts": {
