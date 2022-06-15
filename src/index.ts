@@ -1,7 +1,14 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { normalizeAccount, normalizeChainId } from './normalizers'
 import { ConnectorEvent, ConnectorUpdate } from '@web3-react/types'
-import { computed, onBeforeUnmount, Ref, ref, watch } from 'vue-demi'
+import {
+  computed,
+  onBeforeUnmount,
+  Ref,
+  ref,
+  shallowRef,
+  watch,
+} from 'vue-demi'
 
 export class UnsupportedChainIdError extends Error {
   public constructor(
@@ -16,10 +23,10 @@ export class UnsupportedChainIdError extends Error {
   }
 }
 
-const connector = ref<AbstractConnector>()
+const connector = shallowRef<AbstractConnector>()
 const chainId = ref()
 const account = ref<null | string>()
-const provider = ref<any>()
+const provider = shallowRef<any>()
 const error = ref<Error>()
 const active = computed(
   () =>
@@ -28,7 +35,7 @@ const active = computed(
     account.value !== undefined &&
     !!!error.value,
 )
-const library = ref()
+const library = shallowRef()
 
 let getLibrary: any = (provider?: any, connector?: any) => (): any => null
 
