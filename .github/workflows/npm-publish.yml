@@ -18,12 +18,3 @@ jobs:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: public
           check-version: true
-      - run: cd nuxt
-      - run: | 
-            yarn install
-            yarn prepack
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
-          access: public
-          check-version: true
