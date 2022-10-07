@@ -18,3 +18,9 @@ jobs:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: public
           check-version: true
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          access: public
+          check-version: true
+          package: ./nuxt/package.json

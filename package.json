@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Vue web3 composition api",
   "license": "MIT",
   "main": "index.js",

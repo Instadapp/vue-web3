@@ -68,6 +68,19 @@ import { Web3Provider } from "@ethersproject/providers";
 
 const { library } = useWeb3<Web3Provider>()
 ```
+Nuxt 3
+
+```bash
+yarn add @instadapp/vue-web3-nuxt -D
+```
+
+```
+export default defineNuxtConfig({
+    modules: [
+        '@instadapp/vue-web3-nuxt'
+    ],
+})
+```
 
 <br />
 ---
