@@ -74,7 +74,7 @@ Nuxt 3
 yarn add @instadapp/vue-web3-nuxt -D
 ```
 
-```
+```ts
 export default defineNuxtConfig({
     modules: [
         '@instadapp/vue-web3-nuxt'
