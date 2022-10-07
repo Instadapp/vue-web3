@@ -31,12 +31,12 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
-    "@nuxt/ui": "^0.1.1",
-    "@nuxtjs/eslint-config-typescript": "latest",
+    "@nuxt/ui": "^0.3.3",
+    "@nuxtjs/eslint-config-typescript": "11.0.0",
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/network-connector": "^6.2.9",
     "@web3-react/walletconnect-connector": "^6.2.13",
-    "eslint": "latest",
+    "eslint": "8.24.0",
     "nuxt": "^3.0.0-rc.11"
   }
 }
