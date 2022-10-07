@@ -39,7 +39,7 @@ const connectWalletConnect = async () => {
   const { WalletConnectConnector } = await import('@web3-react/walletconnect-connector')
 
   await activate(
-    new WalletConnectConnector({ })
+    new WalletConnectConnector({})
   )
 }
 </script>

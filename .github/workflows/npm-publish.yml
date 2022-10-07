@@ -18,3 +18,4 @@ jobs:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: public
           check-version: true
+          package: ./nuxt/package.json

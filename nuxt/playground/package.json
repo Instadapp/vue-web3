@@ -6,6 +6,6 @@
     "@web3-react/walletconnect-connector": "^6.2.13"
   },
   "devDependencies": {
-    "@nuxt/ui": "^0.1.1"
+    "@nuxt/ui": "^0.3.3"
   }
 }
