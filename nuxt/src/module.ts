@@ -1,4 +1,9 @@
-import { addAutoImport, defineNuxtModule, extendViteConfig } from '@nuxt/kit'
+import {
+  addAutoImport,
+  addImportsDir,
+  defineNuxtModule,
+  extendViteConfig,
+} from '@nuxt/kit'
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
 
@@ -49,7 +54,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (options.autoImport) {
-      addI({
+      addAutoImport({
         name: 'useWeb3',
         from: '@instadapp/vue-web3',
       })
