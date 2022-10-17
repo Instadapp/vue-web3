@@ -507,10 +507,10 @@
     kolorist "^1.5.1"
     local-pkg "^0.4.2"
 
-"@instadapp/vue-web3@^0.9.1":
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/@instadapp/vue-web3/-/vue-web3-0.9.1.tgz#ac199c5141afaf4525f073a1f5224cc2058c43e5"
-  integrity sha512-O2F389R/UvbarCiButXkmgxDzVTX+2eEkbf6qProGK4l6rL3871UVgM8iAwXfTbIueraSZpyz7KMmJSAlOKr9Q==
+"@instadapp/vue-web3@latest":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@instadapp/vue-web3/-/vue-web3-0.9.4.tgz#2c965ad029930ff400a43d745c5a16b92f2b461c"
+  integrity sha512-0IZZZKq0LZh2eEHHG2UXPmfJ3F0id0EvaNa85dxg9QQatkhDGY3swgsGmiJkLP96jmufBYPNIdeUoJIGt4lfzA==
   dependencies:
     "@ethersproject/bytes" "^5.4.0"
     "@ethersproject/keccak256" "^5.4.0"
