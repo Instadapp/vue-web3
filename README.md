@@ -4,7 +4,7 @@ Vue 2/3 wrapper for web3 built on top of [react-web3@v6](https://github.com/Noah
 
 ## 🚀 Quick Start
 
-Install:
+#### Install:
 
 ```bash
 # npm
@@ -14,7 +14,7 @@ npm i @instadapp/vue-web3
 yarn add @instadapp/vue-web3
 ```
 
-Usage:
+#### Usage:
 
 ```js
 import { useWeb3, setWeb3LibraryCallback } from '@instadapp/vue-web3'
@@ -55,8 +55,9 @@ defineComponent({
   },
 })
 ```
-Typescript:
+#### Typescript:
 
+using generic:
 ```js
 import Web3 from 'web3'
 
@@ -68,7 +69,18 @@ import { Web3Provider } from "@ethersproject/providers";
 
 const { library } = useWeb3<Web3Provider>()
 ```
-Nuxt 3
+
+using global types:
+```ts
+import type Web3 from "web3";
+
+declare module "@instadapp/vue-web3" {
+  interface IVueWeb3Library extends Web3 {}
+}
+```
+
+
+#### Nuxt 3
 
 ```bash
 yarn add @instadapp/vue-web3-nuxt -D
