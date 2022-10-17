@@ -72,6 +72,7 @@ const { library } = useWeb3<Web3Provider>()
 
 using global types:
 ```ts
+// global.d.ts
 import type Web3 from "web3";
 
 declare module "@instadapp/vue-web3" {
