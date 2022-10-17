@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3-nuxt",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "license": "MIT",
   "type": "module",
   "exports": {
