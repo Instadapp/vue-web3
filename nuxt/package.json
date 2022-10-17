@@ -23,7 +23,7 @@
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "@instadapp/vue-web3": "^0.9.5",
+    "@instadapp/vue-web3": "latest",
     "@nuxt/kit": "^3.0.0-rc.11",
     "events": "^3.3.0",
     "mkdirp-promise": "4",
