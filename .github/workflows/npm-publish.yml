@@ -18,6 +18,7 @@ jobs:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: public
           check-version: true
+          package: ./package.json
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
