@@ -45,9 +45,11 @@ export const setWeb3LibraryCallback = (
   getLibrary = cb
 }
 
-export type VueWeb3Library = any
+export interface IVueWeb3Library {
+  [key: string]: any
+}
 
-export const useWeb3 = <VueWeb3Library>() => {
+export const useWeb3 = <TVueWeb3Library extends IVueWeb3Library>() => {
   const onErrorCb = ref<(error: Error) => void>()
 
   const activate = async (
@@ -191,7 +193,7 @@ export const useWeb3 = <VueWeb3Library>() => {
   })
 
   return {
-    library: library as Ref<VueWeb3Library>,
+    library: library as Ref<TVueWeb3Library>,
     active,
     activate,
     deactivate,
