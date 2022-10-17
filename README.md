@@ -75,11 +75,25 @@ yarn add @instadapp/vue-web3-nuxt -D
 ```
 
 ```ts
+// nuxt.config.ts 
 export default defineNuxtConfig({
     modules: [
         '@instadapp/vue-web3-nuxt'
     ],
+    web3 :{
+        autoImport: false, // default `true`
+    }
 })
+```
+If you disabled `@instadapp/vue-web3-nuxt` auto import:
+```ts
+//composables/useWeb3.ts
+import Web3 from "web3";
+import { useWeb3 as useWeb3Generic } from "@instadapp/vue-web3";
+
+const useWeb3 = () => useWeb3Generic<Web3>();
+
+export { useWeb3 };
 ```
 
 <br />
