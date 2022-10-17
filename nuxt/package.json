@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3-nuxt",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,7 +23,7 @@
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "@instadapp/vue-web3": "^0.9.1",
+    "@instadapp/vue-web3": "^0.9.5",
     "@nuxt/kit": "^3.0.0-rc.11",
     "events": "^3.3.0",
     "mkdirp-promise": "4",
