@@ -1,9 +1,4 @@
-import {
-  addAutoImport,
-  addImportsDir,
-  defineNuxtModule,
-  extendViteConfig,
-} from '@nuxt/kit'
+import { addImports, defineNuxtModule, extendViteConfig } from '@nuxt/kit'
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
 
@@ -20,21 +15,12 @@ export default defineNuxtModule<ModuleOptions>({
     autoImport: true,
   },
   setup(options, nuxt) {
-    // nuxt.hook('vite:extendConfig', (clientConfig, { isClient }) => {
-    //   if (isClient && process.env.NODE_ENV === 'production') {
-    //     clientConfig.resolve.alias = {
-    //       ...clientConfig.resolve.alias,
-    //       web3: resolve('./node_modules/web3/dist/web3.min.js')
-    //     }
-    //   }
-    // })
-
     extendViteConfig((config) => {
       config.build = config.build || {}
       config.build.rollupOptions = config.build.rollupOptions || {}
       config.build.rollupOptions.plugins =
         config.build.rollupOptions.plugins || []
-      config.build.rollupOptions.plugins.push(rollupNodePolyFill())
+      config.build.rollupOptions.plugins.push(rollupNodePolyFill() as any)
 
       config.optimizeDeps = config.optimizeDeps || {}
       config.optimizeDeps.esbuildOptions =
@@ -54,7 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (options.autoImport) {
-      addAutoImport({
+      addImports({
         name: 'useWeb3',
         from: '@instadapp/vue-web3',
       })
