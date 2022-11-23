@@ -20,7 +20,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.build.rollupOptions = config.build.rollupOptions || {}
       config.build.rollupOptions.plugins =
         config.build.rollupOptions.plugins || []
-      config.build.rollupOptions.plugins.push(rollupNodePolyFill())
+      config.build.rollupOptions.plugins.push(rollupNodePolyFill() as any)
 
       config.optimizeDeps = config.optimizeDeps || {}
       config.optimizeDeps.esbuildOptions =
