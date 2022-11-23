@@ -23,20 +23,20 @@
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "@instadapp/vue-web3": "latest",
-    "@nuxt/kit": "^3.0.0-rc.11",
+    "@instadapp/vue-web3": "^0.9.7",
+    "@nuxt/kit": "^3.0.0",
     "events": "^3.3.0",
     "mkdirp-promise": "4",
     "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "latest",
+    "@nuxt/module-builder": "^0.2.1",
     "@nuxt/ui": "^0.3.3",
     "@nuxtjs/eslint-config-typescript": "11.0.0",
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/network-connector": "^6.2.9",
     "@web3-react/walletconnect-connector": "^6.2.13",
     "eslint": "8.24.0",
-    "nuxt": "^3.0.0-rc.11"
+    "nuxt": "^3.0.0"
   }
 }
