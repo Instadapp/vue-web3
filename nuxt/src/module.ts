@@ -1,6 +1,5 @@
-import { addImports, defineNuxtModule, extendViteConfig } from '@nuxt/kit'
-import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
-import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
+import { addImports, addVitePlugin, defineNuxtModule } from '@nuxt/kit'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 export interface ModuleOptions {
   autoImport: boolean
@@ -15,29 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
     autoImport: true,
   },
   setup(options, nuxt) {
-    extendViteConfig((config) => {
-      config.build = config.build || {}
-      config.build.rollupOptions = config.build.rollupOptions || {}
-      config.build.rollupOptions.plugins =
-        config.build.rollupOptions.plugins || []
-      config.build.rollupOptions.plugins.push(rollupNodePolyFill() as any)
-
-      config.optimizeDeps = config.optimizeDeps || {}
-      config.optimizeDeps.esbuildOptions =
-        config.optimizeDeps.esbuildOptions || {}
-      config.optimizeDeps.esbuildOptions.define =
-        config.optimizeDeps.esbuildOptions.define || {}
-      config.optimizeDeps.esbuildOptions.define.global = 'globalThis'
-
-      config.optimizeDeps.esbuildOptions.plugins =
-        config.optimizeDeps.esbuildOptions.plugins || []
-      config.optimizeDeps.esbuildOptions.plugins.push(
-        NodeGlobalsPolyfillPlugin({
-          process: true,
-          buffer: true,
-        }),
-      )
-    })
+    addVitePlugin(nodePolyfills())
 
     if (options.autoImport) {
       addImports({

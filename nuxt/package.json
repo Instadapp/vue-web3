@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3-nuxt",
-  "version": "0.9.8",
+  "version": "0.10.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,22 +21,19 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
-    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "@instadapp/vue-web3": "^0.9.7",
-    "@nuxt/kit": "^3.0.0",
-    "events": "^3.3.0",
+    "@instadapp/vue-web3": "^0.9.8",
+    "@nuxt/kit": "^3.1.0",
     "mkdirp-promise": "4",
-    "rollup-plugin-node-polyfills": "^0.2.1"
+    "vite-plugin-node-polyfills": "^0.7.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",
-    "@nuxt/ui": "^0.3.3",
+    "@nuxt/ui": "^0.4.0",
     "@nuxtjs/eslint-config-typescript": "11.0.0",
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/network-connector": "^6.2.9",
     "@web3-react/walletconnect-connector": "^6.2.13",
-    "eslint": "8.24.0",
-    "nuxt": "^3.0.0"
+    "eslint": "8.32.0",
+    "nuxt": "^3.1.0"
   }
 }
