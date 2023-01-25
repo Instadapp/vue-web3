@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Vue web3 composition api",
   "license": "MIT",
   "main": "index.js",
@@ -53,7 +53,7 @@
     "@web3-react/types": "^6.0.7",
     "events": "^3.3.0",
     "tiny-invariant": "^1.1.0",
-    "vue-demi": "^0.11.4"
+    "vue-demi": "^0.13.11"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
