@@ -32,7 +32,23 @@ const walletconnect = new WalletConnectConnector({
   qrcode: true,
 })
 
+// web3.js v1
 setWeb3LibraryCallback((provider) => new Web3(provider))
+
+// ethers.js v5
+setWeb3LibraryCallback((provider) => new Web3Provider(provider, "any"))
+
+// viem
+setWeb3LibraryCallback((provider, _connector, account) => ({
+  public: createPublicClient({
+      transport: custom(provider),
+  }),
+  wallet: createWalletClient({
+      account,
+      chain: null as unknown as Chain,
+      transport: custom(provider),
+  }),
+}))
 
 defineComponent({
   setup() {
@@ -55,9 +71,11 @@ defineComponent({
   },
 })
 ```
+
 #### Typescript:
 
 using generic:
+
 ```js
 import Web3 from 'web3'
 
@@ -71,15 +89,15 @@ const { library } = useWeb3<Web3Provider>()
 ```
 
 using global types:
+
 ```ts
 // global.d.ts
-import type Web3 from "web3";
+import type Web3 from 'web3'
 
-declare module "@instadapp/vue-web3" {
+declare module '@instadapp/vue-web3' {
   interface IVueWeb3Library extends Web3 {}
 }
 ```
-
 
 #### Nuxt 3
 
@@ -88,31 +106,31 @@ yarn add @instadapp/vue-web3-nuxt -D
 ```
 
 ```ts
-// nuxt.config.ts 
+// nuxt.config.ts
 export default defineNuxtConfig({
-    modules: [
-        '@instadapp/vue-web3-nuxt'
-    ],
-    web3 :{
-        autoImport: false, // default `true`
-    }
+  modules: ['@instadapp/vue-web3-nuxt'],
+  web3: {
+    autoImport: false, // default `true`
+  },
 })
 ```
+
 If you disabled `@instadapp/vue-web3-nuxt` auto import:
+
 ```ts
 //composables/useWeb3.ts
-import Web3 from "web3";
+import Web3 from 'web3'
 // import { Web3Provider } from "@ethersproject/providers";
-import { useWeb3 as useWeb3Generic } from "@instadapp/vue-web3";
+import { useWeb3 as useWeb3Generic } from '@instadapp/vue-web3'
 
-const useWeb3 = () => useWeb3Generic<Web3>();
+const useWeb3 = () => useWeb3Generic<Web3>()
 // const useWeb3 = () => useWeb3Generic<Web3Provider>();
 
-export { useWeb3 };
+export { useWeb3 }
 ```
 
-<br />
----
+## <br />
+
 <br />
 
 Demo (Nuxt 2): https://github.com/KABBOUCHI/nuxt-vue-web3

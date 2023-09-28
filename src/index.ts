@@ -37,7 +37,9 @@ const active = computed(
 )
 const library = shallowRef()
 
-let getLibrary: any = (provider?: any, connector?: any) => (): any => null
+let getLibrary: any =
+  (provider: any, connector: any, account: `0x${string}`) => (): any =>
+    null
 
 export const setWeb3LibraryCallback = (
   cb: (provider?: any, connector?: any) => any,
@@ -160,13 +162,13 @@ export const useWeb3 = <TVueWeb3Library extends IVueWeb3Library>() => {
     library.value = undefined
   }
 
-  watch([active, provider, connector, chainId], () => {
+  watch([active, provider, connector, chainId, account], () => {
     library.value =
       active.value &&
       chainId.value !== undefined &&
       Number.isInteger(chainId.value) &&
       !!connector.value
-        ? getLibrary(provider.value, connector.value)
+        ? getLibrary(provider.value, connector.value, account.value)
         : undefined
   })
 
