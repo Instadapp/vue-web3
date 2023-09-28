@@ -1,6 +1,6 @@
 {
   "name": "@instadapp/vue-web3-nuxt",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,7 +21,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@instadapp/vue-web3": "^0.11.0",
+    "@instadapp/vue-web3": "^0.11.1",
     "@nuxt/kit": "^3.1.0",
     "mkdirp-promise": "4",
     "vite-plugin-node-polyfills": "^0.7.0"

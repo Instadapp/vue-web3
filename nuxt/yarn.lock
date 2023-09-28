@@ -722,10 +722,10 @@
     kolorist "^1.6.0"
     local-pkg "^0.4.2"
 
-"@instadapp/vue-web3@^0.9.8":
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/@instadapp/vue-web3/-/vue-web3-0.9.8.tgz#4d7acf14518c96037c181cffa9a1865d8c3537b0"
-  integrity sha512-sFh20QxHm9U07v03PgpAH7Ox9YlLipPiEriwnBRPigwyDbyrKe9w6bj4eNklPzKcYbOqVQ3rxt/TTderzFuuKQ==
+"@instadapp/vue-web3@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@instadapp/vue-web3/-/vue-web3-0.11.1.tgz#3abcd28d39346aaf7a87bc4c3cb0221680ee5371"
+  integrity sha512-SSz2bnD1jMSlbznpV6oFEwlNQ4OR8mzXTuvVw/QCeY21nBuzQKy97e911691Ixdui1dfO6wadYrkke6c5meePQ==
   dependencies:
     "@ethersproject/bytes" "^5.4.0"
     "@ethersproject/keccak256" "^5.4.0"
@@ -733,7 +733,7 @@
     "@web3-react/types" "^6.0.7"
     events "^3.3.0"
     tiny-invariant "^1.1.0"
-    vue-demi "^0.11.4"
+    vue-demi "^0.13.11"
 
 "@ioredis/commands@^1.1.1":
   version "1.2.0"
@@ -7696,15 +7696,10 @@ vue-bundle-renderer@^1.0.0:
   dependencies:
     ufo "^1.0.0"
 
-vue-demi@*:
+vue-demi@*, vue-demi@^0.13.11:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
   integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
-
-vue-demi@^0.11.4:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.4.tgz#6101992fe4724cf5634018a16e953f3052e94e2a"
-  integrity sha512-/3xFwzSykLW2HiiLie43a+FFgNOcokbBJ+fzvFXd0r2T8MYohqvphUyDQ8lbAwzQ3Dlcrb1c9ykifGkhSIAk6A==
 
 vue-devtools-stub@^0.1.0:
   version "0.1.0"
