@@ -42,7 +42,7 @@ let getLibrary: any =
     null
 
 export const setWeb3LibraryCallback = (
-  cb: (provider?: any, connector?: any) => any,
+  cb: (provider: any, connector: any, account: `0x${string}`) => any,
 ) => {
   getLibrary = cb
 }
